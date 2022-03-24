@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application1</string>
+    <string name="app_name">My Application!</string>
+    <string name="home"> Главная </string>
+    <string name="store" > Рынок </string>
+    <string name="earnings"> Доходы </string>
+    <string name="builds"> Билды </string>
+    <string name="title"> Albion Staff </string>
 </resources>
