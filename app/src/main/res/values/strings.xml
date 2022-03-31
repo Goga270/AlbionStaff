@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">My Application!</string>
     <string name="home"> Главная </string>
-    <string name="store" > Рынок </string>
+    <string name="store"> Рынок </string>
     <string name="earnings"> Доходы </string>
     <string name="builds"> Билды </string>
     <string name="title"> Albion Staff </string>
+    <string name="First_Vopros"> Что такое Albion? </string>
+    <string name="Opisanie"> Albion Online - это MMORPG-песочница в открытом средневековом фэнтези мире. </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

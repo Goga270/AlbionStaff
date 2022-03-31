@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home2">
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.myapplication1.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/market"
+        android:name="com.example.myapplication1.Market"
+        android:label="fragment_market"
+        tools:layout="@layout/fragment_market" />
+    <fragment
+        android:id="@+id/earnings"
+        android:name="com.example.myapplication1.Earnings"
+        android:label="fragment_earnings"
+        tools:layout="@layout/fragment_earnings" />
+    <fragment
+        android:id="@+id/builds"
+        android:name="com.example.myapplication1.Builds"
+        android:label="fragment_builds"
+        tools:layout="@layout/fragment_builds" />
+</navigation>

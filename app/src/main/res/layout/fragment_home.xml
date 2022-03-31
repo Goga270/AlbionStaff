@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/rLayout"
+    android:id="@+id/fragmentHome"
     android:background="@color/color_background"
     >
 
-    <!--<TextView
+    <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         android:paddingTop="13dp"
         />
 
-    &lt;!&ndash;<EditText
+    <!--<EditText
         android:id="@+id/editTextTextMultiLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
         android:text="gggg"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:inputType="textMultiLine" />&ndash;&gt;
+        android:inputType="textMultiLine" />-->
 
     <TextView
         android:id="@+id/First_Vopros"
@@ -66,14 +66,6 @@
         android:layout_below="@+id/Opisanie"
         android:paddingBottom="75dp"
         android:src="@drawable/albion"
-        android:id="@+id/img_albion"
-        android:contentDescription="TODO" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/img_albion"
-        android:text="ааалаолаол"
         />
 
 
@@ -95,12 +87,13 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/activity_menu" />
 
-    </LinearLayout>-->
-
+    </LinearLayout>
 
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:id="@+id/gg"
+        android:id="@+id/home_fragment"
         />
+
+
 </RelativeLayout>
