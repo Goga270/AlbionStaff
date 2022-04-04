@@ -8,6 +8,13 @@
     android:background="@color/color_background"
     >
 
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fr"
+        />
     <!--<TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -76,7 +83,7 @@
         android:text="ааалаолаол"
         />
 
-
+    -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,12 +102,6 @@
             app:labelVisibilityMode="labeled"
             app:menu="@menu/activity_menu" />
 
-    </LinearLayout>-->
+    </LinearLayout>
 
-
-    <androidx.fragment.app.FragmentContainerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/gg"
-        />
 </RelativeLayout>

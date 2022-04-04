@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Market">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:tooltipText="fffff"
+
+         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_accesoires"
+        android:text="show Popup"
+        android:layout_below="@+id/spinner"
+        android:layout_marginLeft="30dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_armor"
+        android:text="show Popup"
+        android:layout_below="@+id/Button_accesoires"
+        android:layout_marginLeft="30dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_Artifact"
+        android:text="show Popup"
+        android:layout_below="@+id/Button_armor"
+        android:layout_marginLeft="30dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_City_Resources"
+        android:text="show Popup"
+        android:layout_below="@+id/Button_Artifact"
+        android:layout_marginLeft="30dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button_Consumable"
+        android:text="show Popup"
+        android:layout_below="@+id/Button_City_Resources"
+        android:layout_marginLeft="30dp"
+        />
+
+</RelativeLayout>

@@ -3,12 +3,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Earnings">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Media -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                app:srcCompat="@drawable/albion"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/content_description_media"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:background="@color/second_color"
+                >
+
+                <!-- Title, secondary and supporting text -->
+                <Button
+                    android:id="@+id/Transportation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@color/second_color"
+                    android:backgroundTint="@color/second_color"
+                    android:text="@string/Transported"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="@color/color_background" />
+                <TextView
+                    android:id="@+id/Vlojenia"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/Transportation_vlojenia"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:layout_toRightOf="@+id/Transportation"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/color_background"
+                    android:textColor="@color/second_color"
+                    android:gravity="center"
+                    />
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:text="@string/Transportation_earn"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/second_color"
+                    android:gravity="center"
+                    android:layout_toRightOf="@+id/Vlojenia"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/color_background"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </FrameLayout>

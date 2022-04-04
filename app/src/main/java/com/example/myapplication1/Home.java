@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -31,7 +32,7 @@ public class Home extends Fragment {
     private String mParam1;
     private String mParam2;
     private TextView title;
-    private Market fragment1;
+    private Fragment fragment1=null;
 
     public Home() {
         // Required empty public constructor
@@ -70,23 +71,33 @@ public class Home extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_home, container, false);
 
-        BottomNavigationView bottomNavigationView = rootView.findViewById(R.id.bottom_navigation);
+        /*BottomNavigationView bottomNavigationView = rootView.findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 switch (id){
                     case R.id.page_1:
+                        break;
+                    case R.id.page_2:
                         fragment1 = new Market();
-                        FragmentTransaction ft = getChildFragmentManager().beginTransaction();
-                        ft.addToBackStack(null);
-                        ft.replace(R.id.fragmentHome, fragment1);
-                        ft.commit();
+                        break;
+                    case R.id.page_3:
+                        fragment1 = new Earnings();
+                        break;
+                    case R.id.page_4:
+                        fragment1 = new Builds();
+                        break;
                 }
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.addToBackStack(null);
+                ft.replace(R.id.fr, fragment1);
+                ft.commit();
 
                 return true;
             }
-        });
+        });*/
         return rootView;
     }
 }

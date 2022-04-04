@@ -1,99 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:id="@+id/fragmentHome"
-    android:background="@color/color_background"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     >
-
-    <TextView
-        android:id="@+id/title"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textColor="@color/second_color"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingTop="13dp"
-        />
-
-    <!--<EditText
-        android:id="@+id/editTextTextMultiLine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_alignBottom="@+id/title"
-        android:layout_below="@id/title"
-        android:text="gggg"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:inputType="textMultiLine" />-->
-
-    <TextView
-        android:id="@+id/First_Vopros"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:text="@string/First_Vopros"
-        android:layout_centerHorizontal="true"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:paddingTop="13dp"
-        android:textColor="@color/second_color"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@id/First_Vopros"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:paddingTop="13dp"
-        android:text="@string/Opisanie"
-        android:textColor="@color/second_color"
-        android:id="@+id/Opisanie"
-        />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Opisanie"
-        android:paddingBottom="75dp"
-        android:src="@drawable/albion"
-        />
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/second_color"
+        android:id="@+id/fragmentHome"
+        android:background="@color/color_background"
         >
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
+        <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/second_color"
-            app:itemIconSize="37dp"
-            app:itemIconTint="@color/color_background"
-            app:itemTextColor="@color/color_background"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/activity_menu" />
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textColor="@color/second_color"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="13dp"
+            />
 
-    </LinearLayout>
+        <!--<EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_alignBottom="@+id/title"
+            android:layout_below="@id/title"
+            android:text="gggg"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:inputType="textMultiLine" />-->
 
-    <androidx.fragment.app.FragmentContainerView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/home_fragment"
-        />
+        <TextView
+            android:id="@+id/First_Vopros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title"
+            android:text="@string/First_Vopros"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="13dp"
+            android:textColor="@color/second_color"
+            />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_below="@id/First_Vopros"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:paddingTop="13dp"
+            android:text="@string/Opisanie"
+            android:textColor="@color/second_color"
+            android:id="@+id/Opisanie"
+            />
 
-</RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Opisanie"
+            android:id="@+id/img"
+            android:src="@drawable/albion" />
+
+        <TextView
+            android:id="@+id/Second_Vopros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:text="@string/Second_Vopros"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="13dp"
+            android:textColor="@color/second_color"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_below="@id/Second_Vopros"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:paddingTop="13dp"
+            android:text="@string/Opisanie2"
+            android:textColor="@color/second_color"
+            android:id="@+id/Opisanie2"
+            android:paddingBottom="60dp"
+            />
+    </RelativeLayout>
+</ScrollView>

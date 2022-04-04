@@ -7,6 +7,16 @@
     <string name="title"> Albion Staff </string>
     <string name="First_Vopros"> Что такое Albion? </string>
     <string name="Opisanie"> Albion Online - это MMORPG-песочница в открытом средневековом фэнтези мире. </string>
+    <string name="Second_Vopros"> Что такое Albion Staff? </string>
+    <string name="Opisanie2"> Так как в игре присутствует экономика, управляемая игроками, где почти каждый
+        предмет кем-то создан. Появляется необходимость в её понимании. Наше приложение поможет вам следить
+        за ценами на рынке в режиме реального времени, расскажет какие виды заработка есть в игре и как ими
+        пользоваться, а также покажет вам статистику убийств разными классами, чтобы вы могли понимать какая
+        мета сейчас в игре. </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description_media">Image</string>
+    <string name="Transported">Перевозка</string>
+    <string name="Transportation_vlojenia">Вложения: Мал-Бол</string>
+    <string name="Transportation_earn">Прибыль: 10-20%</string>
 </resources>
