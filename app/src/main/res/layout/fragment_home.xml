@@ -15,14 +15,13 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textColor="@color/second_color"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:paddingTop="13dp"
-            />
+            android:text="@string/title"
+            android:textColor="@color/second_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <!--<EditText
             android:id="@+id/editTextTextMultiLine"

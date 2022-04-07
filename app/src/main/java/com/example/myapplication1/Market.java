@@ -86,8 +86,6 @@ public class Market extends Fragment {
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
 
-                        TextView textView= rootView.findViewById(R.id.test);
-                        textView.setText(menuItem.getTitle());
                         Bundle bundle = new Bundle();
                         int id=menuItem.getItemId();
                         switch (id){

@@ -1,67 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:background="@color/color_background"
-    tools:context=".Market">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        tools:context=".Market">
 
-    <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="Категории"
+            android:textColor="@color/second_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Button_Consumable"
-        android:id="@+id/test"
+        <!-- TODO: Update blank fragment layout -->
 
-        />
+        <Button
+            android:id="@+id/Button_armor"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+            android:text="Броня"
+            android:textColor="@color/color_background" />
 
-    <Button
-        android:id="@+id/Button_armor"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/color_background"
-        android:text="Броня" />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_accesoires"
+            android:text="Аксесуары"
+            android:layout_below="@+id/Button_armor"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/Button_accesoires"
-        android:text="Аксесуары"
-        android:layout_below="@+id/Button_armor"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/color_background"
-        />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Artifact"
+            android:text="Артефакты"
+            android:layout_below="@+id/Button_accesoires"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/Button_Artifact"
-        android:text="Артефакты"
-        android:layout_below="@+id/Button_accesoires"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/color_background"
-        />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_City_Resources"
+            android:text="Ресурсы города"
+            android:layout_below="@+id/Button_Artifact"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/Button_City_Resources"
-        android:text="Ресурсы города"
-        android:layout_below="@+id/Button_Artifact"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/color_background"
-        />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Consumable"
+            android:text="Расходники"
+            android:layout_below="@+id/Button_City_Resources"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/Button_Consumable"
-        android:text="Расходники"
-        android:layout_below="@+id/Button_City_Resources"
-        android:layout_marginLeft="30dp"
-        android:textColor="@color/color_background"
-        />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Farmable"
+            android:text="Фермерство"
+            android:layout_below="@+id/Button_Consumable"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
 
-</RelativeLayout>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Furniture"
+            android:text="Мебель"
+            android:layout_below="@+id/Button_Farmable"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:id="@+id/Button_Gathering_Gear"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_Furniture"
+            android:layout_marginLeft="30dp"
+            android:text="Одежда Рабочих"
+            android:textColor="@color/color_background" />
+
+        <Button
+            android:id="@+id/Button_Luxury_Goods"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Button_Gathering_Gear"
+            android:layout_marginLeft="30dp"
+            android:text="Сокровища"
+            android:textColor="@color/color_background" />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Magic"
+            android:text="Посохи"
+            android:layout_below="@+id/Button_Luxury_Goods"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Matireals"
+            android:text="Материалы"
+            android:layout_below="@+id/Button_Magic"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Melee"
+            android:text="Ближний бой"
+            android:layout_below="@+id/Button_Matireals"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Mount"
+            android:text="Животные"
+            android:layout_below="@+id/Button_Melee"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Off_hand"
+            android:text="Левая Рука"
+            android:layout_below="@+id/Button_Mount"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Other"
+            android:text="Другое"
+            android:layout_below="@+id/Button_Off_hand"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Product"
+            android:text="Продукты"
+            android:layout_below="@+id/Button_Other"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Ranged"
+            android:text="Дальний бой"
+            android:layout_below="@+id/Button_Product"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Resources"
+            android:text="Ресурсы"
+            android:layout_below="@+id/Button_Ranged"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button_Trophies"
+            android:text="Трофеи"
+            android:layout_below="@+id/Button_Resources"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/color_background"
+            />
+
+    </RelativeLayout>
+</ScrollView>
