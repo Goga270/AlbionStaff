@@ -76,12 +76,7 @@ public class Market extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_market, container, false);
 
-        Spinner spinner = rootView.findViewById(R.id.spinner);
-        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item,f);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        Button b = rootView.findViewById(R.id.Button_accesoires);
+        Button b = rootView.findViewById(R.id.Button_armor);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
