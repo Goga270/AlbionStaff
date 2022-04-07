@@ -19,4 +19,14 @@
     <string name="Transported">Перевозка</string>
     <string name="Transportation_vlojenia">Вложения: Мал-Бол</string>
     <string name="Transportation_earn">Прибыль: 10-20%</string>
+    <string name="cloth_armor">Тканевая броня</string>
+    <string name="cloth_helmet">Тканевый шлем</string>
+    <string name="cloth_shoes">Тканевые ботинки</string>
+    <string name="leather_armor">Кожанная броня</string>
+    <string name="leather_helmet">Кожанный шлем</string>
+    <string name="leather_shoes">Кажанные ботинки</string>
+    <string name="plate_armor">Тяжёлая броня</string>
+    <string name="plate_helmet">Тяжёлый шлем</string>
+    <string name="plate_shoes">Тяжёлые ботинки</string>
+
 </resources>

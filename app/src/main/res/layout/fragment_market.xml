@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_background"
     tools:context=".Market">
 
     <!-- TODO: Update blank fragment layout -->
@@ -16,14 +17,22 @@
 
          />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/Button_Consumable"
+        android:id="@+id/test"
+
+        />
+
+    <Button
         android:id="@+id/Button_accesoires"
-        android:text="show Popup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/spinner"
         android:layout_marginLeft="30dp"
-        />
+        android:textColor="@color/color_background"
+        android:text="show Popup" />
 
     <Button
         android:layout_width="wrap_content"
@@ -32,6 +41,7 @@
         android:text="show Popup"
         android:layout_below="@+id/Button_accesoires"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/color_background"
         />
 
     <Button
@@ -41,6 +51,7 @@
         android:text="show Popup"
         android:layout_below="@+id/Button_armor"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/color_background"
         />
 
     <Button
@@ -50,6 +61,7 @@
         android:text="show Popup"
         android:layout_below="@+id/Button_Artifact"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/color_background"
         />
 
     <Button
@@ -59,6 +71,7 @@
         android:text="show Popup"
         android:layout_below="@+id/Button_City_Resources"
         android:layout_marginLeft="30dp"
+        android:textColor="@color/color_background"
         />
 
 </RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/cloth_armor"
+        android:title="@string/cloth_armor" />
+    <item android:id="@+id/cloth_helmet"
+        android:title="@string/cloth_helmet" />
+    <item android:id="@+id/cloth_shoes"
+        android:title="@string/cloth_shoes" />
+    <item android:id="@+id/leather_armor"
+        android:title="@string/leather_armor" />
+    <item android:id="@+id/leather_helmet"
+        android:title="@string/leather_helmet" />
+    <item android:id="@+id/leather_shoes"
+        android:title="@string/leather_shoes" />
+    <item android:id="@+id/plate_armor"
+        android:title="@string/plate_armor" />
+    <item android:id="@+id/plate_helmet"
+        android:title="@string/plate_helmet" />
+    <item android:id="@+id/plate_shoes"
+        android:title="@string/plate_shoes" />
+</menu>

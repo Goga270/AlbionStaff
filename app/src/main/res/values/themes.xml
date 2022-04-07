@@ -12,9 +12,13 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="popupMenuBackground">@color/color_background</item>
     </style>
 
     <style name="colorOfButton" parent="ThemeOverlay.AppCompat">
         <item name="colorAccent">@color/second_color</item>
+    </style>
+    <style name="PopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="popupMenuBackground">@color/color_background</item>
     </style>
 </resources>
