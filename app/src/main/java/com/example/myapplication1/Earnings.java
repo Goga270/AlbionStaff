@@ -3,10 +3,13 @@ package com.example.myapplication1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +26,7 @@ public class Earnings extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    ArrayList<EarningItem> states = new ArrayList<EarningItem>();
 
     public Earnings() {
         // Required empty public constructor
@@ -59,6 +63,18 @@ public class Earnings extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_earnings, container, false);
+        View view = inflater.inflate(R.layout.fragment_earnings, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.earn_item);
+        setInitialData();
+        EarningAdapter earningAdapter = new EarningAdapter(getContext(),states);
+        recyclerView.setAdapter(earningAdapter);
+        return view;
+    }
+
+    public void setInitialData(){
+        states.add(new EarningItem(R.drawable.albion,"Прибыль: 10-20%","Вложения: Мал-Бол","Перевозка"));
+        states.add(new EarningItem(R.drawable.albion,"Прибыль: 25-50%","Вложения: Бол","Перекрафт"));
+        states.add(new EarningItem(R.drawable.albion,"Прибыль: -25-50%","Вложения: Мал-Бол","Разбор артефактов"));
+        states.add(new EarningItem(R.drawable.albion,"Прибыль: -10-40%","Вложения: Мал-Бол","Казино"));
     }
 }

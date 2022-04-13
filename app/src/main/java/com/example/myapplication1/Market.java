@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,6 +16,11 @@ import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.myapplication1.RecycleViewButtons.ButtonAdapter;
+import com.example.myapplication1.RecycleViewButtons.ButtonItem;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +39,7 @@ public class Market extends Fragment {
     private String mParam2;
     private String[] f = { "Ybrbnf ", "Seva" };
     private Fragment fragment=null;
+    ArrayList<ButtonItem> states = new ArrayList<ButtonItem>();
 
     public Market() {
         // Required empty public constructor
@@ -155,6 +162,16 @@ public class Market extends Fragment {
             }
         });
 
+        RecyclerView recyclerView = rootView.findViewById(R.id.button_item);
+        setInitialData();
+        ButtonAdapter buttonAdapter = new ButtonAdapter(getContext(),states);
+        recyclerView.setAdapter(buttonAdapter);
+
         return rootView;
     }
+
+    public void setInitialData(){
+        states.add(new ButtonItem("Броня", getContext()));
+    }
 }
+

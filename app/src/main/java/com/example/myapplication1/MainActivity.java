@@ -20,10 +20,19 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static MainActivity INSTANCE = new MainActivity();
+
     TextView textView;
     private Fragment fragment = null;
     private Market fragment1 = null;
     private String[] f = { "Ybrbnf ", "Seva" };
+
+
+
+    public static MainActivity getINSTANCE(){
+        return INSTANCE;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

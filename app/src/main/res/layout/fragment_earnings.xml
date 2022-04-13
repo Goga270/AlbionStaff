@@ -6,13 +6,24 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_background"
-        tools:context=".Earnings">
+        android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/earn_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
         <!-- TODO: Update blank fragment layout -->
-        <com.google.android.material.card.MaterialCardView
+        <!--<com.google.android.material.card.MaterialCardView
             android:id="@+id/card_transportation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Media -->
+                &lt;!&ndash; Media &ndash;&gt;
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
@@ -42,7 +53,7 @@
                     android:background="@color/second_color"
                     >
 
-                    <!-- Title, secondary and supporting text -->
+                    &lt;!&ndash; Title, secondary and supporting text &ndash;&gt;
                     <Button
                         android:id="@+id/Transportation"
                         android:layout_width="wrap_content"
@@ -79,9 +90,9 @@
                 </RelativeLayout>
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>-->
 
-        <com.google.android.material.card.MaterialCardView
+        <!--<com.google.android.material.card.MaterialCardView
             android:id="@+id/card_perecraft"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,8 +106,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_perecraft"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintTop_toBottomOf="@id/card_transportation"
+                    android:layout_marginTop="32dp"
+                    >
 
-                <!-- Media -->
+                <LinearLayout
+                    android:layout_width="match_pa
+                &lt;!&ndash; Media &ndash;&gt;
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
@@ -112,7 +134,7 @@
                     android:background="@color/second_color"
                     >
 
-                    <!-- Title, secondary and supporting text -->
+                    &lt;!&ndash; Title, secondary and supporting text &ndash;&gt;
                     <Button
                         android:id="@+id/perecraft"
                         android:layout_width="wrap_content"
@@ -166,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Media -->
+                &lt;!&ndash; Media &ndash;&gt;
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="194dp"
@@ -183,7 +205,7 @@
                     android:background="@color/second_color"
                     >
 
-                    <!-- Title, secondary and supporting text -->
+                    &lt;!&ndash; Title, secondary and supporting text &ndash;&gt;
                     <Button
                         android:id="@+id/broke_artefacts"
                         android:layout_width="wrap_content"
@@ -220,7 +242,7 @@
                 </RelativeLayout>
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>-->
     
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

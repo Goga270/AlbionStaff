@@ -4,20 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/button_item.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/component_item.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/earnings_item.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_builds.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_earnings.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_home.xml" value="0.25902335456475584" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_market.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_second_market.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_third_market.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/fragment_transportation.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/layout/test.xml" value="0.358695652173913" />
         <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/menu/activity_menu.xml" value="0.18802083333333333" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/component_item.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/fragment_builds.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/fragment_earnings.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/fragment_home.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/fragment_market.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/fragment_second_market.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/layout/fragment_third_market.xml" value="0.22826086956521738" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/menu/activity_menu.xml" value="0.25416666666666665" />
-        <entry key="..\:/Projects/AlbionStaff2/app/src/main/res/menu/market_menu_armor.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProject/AlbionStaff2/app/src/main/res/menu/market_menu.xml" value="0.24537037037037038" />
         <entry key="..\:/Projects/Test/app/src/main/res/drawable/home.xml" value="0.1105" />
         <entry key="..\:/Projects/Test/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1105" />
         <entry key="..\:/Projects/Test/app/src/main/res/drawable/ic_launcher_home_foreground.xml" value="0.12" />
