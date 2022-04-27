@@ -28,5 +28,33 @@
     <string name="plate_armor">Тяжёлая броня</string>
     <string name="plate_helmet">Тяжёлый шлем</string>
     <string name="plate_shoes">Тяжёлые ботинки</string>
-
+    <string-array name="Resources">
+        <item>Ткань</item>
+        <item>Хлопок</item>
+        <item>Шкура</item>
+        <item>Кожа</item>
+        <item>Металический слиток</item>
+        <item>Металл</item>
+        <item>Дерево</item>
+        <item>Обработанное дерево</item>
+        <item>Камень</item>
+        <item>Каменный блок</item>
+    </string-array>
+    <string-array name="Tier">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="Cities">
+        <item>Люмхурст</item>
+        <item>Форт Стерлинг</item>
+        <item>Тетфорд</item>
+        <item>Мартлок</item>
+        <item>Бриджвотч</item>
+        <item>Карлеон</item>
+    </string-array>
 </resources>

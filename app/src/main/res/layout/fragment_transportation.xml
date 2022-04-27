@@ -9,7 +9,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".TransportationFragment"
+        tools:context=".MVVM.views.TransportationFragment"
         >
 
         <TextView
@@ -40,6 +40,7 @@
             />
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/Opisanie"
@@ -52,7 +53,7 @@
             android:textSize="20sp"
             />
 
-        <Button
+        <!--<Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/Best_var"
@@ -62,13 +63,13 @@
             android:text="Лучший вариант"
             android:textColor="@color/color_background"
             android:layout_marginTop="16dp"
-            />
+            />-->
 
         <TextView
             android:id="@+id/Resource"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/Best_var"
+            app:layout_constraintTop_toBottomOf="@id/title"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
@@ -77,14 +78,16 @@
             android:text="Ресурс"
             />
 
-        <EditText
+        <Spinner
             android:layout_width="wrap_content"
+            android:id="@+id/Spinner_Resources"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_Resource"
-            app:layout_constraintTop_toBottomOf="@id/Best_var"
+            app:layout_constraintTop_toBottomOf="@id/title"
             app:layout_constraintLeft_toRightOf="@id/Resource"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="16dp"
             />
+
         <TextView
             android:id="@+id/Tier"
             android:layout_width="wrap_content"
@@ -95,17 +98,20 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/second_color"
             android:textSize="16sp"
-            android:text="Ресурс"
+
+            android:text="Тир"
             />
 
-        <EditText
+        <Spinner
             android:layout_width="wrap_content"
+            android:id="@+id/Spinner_Tier"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_Tier"
             app:layout_constraintTop_toBottomOf="@id/Resource"
             app:layout_constraintLeft_toRightOf="@id/Tier"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="16dp"
             />
+
         <TextView
             android:id="@+id/Count"
             android:layout_width="wrap_content"
@@ -116,7 +122,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/second_color"
             android:textSize="16sp"
-            android:text="Ресурс"
+            android:text="Количество"
             />
 
         <EditText
@@ -125,7 +131,8 @@
             android:id="@+id/edit_Count"
             app:layout_constraintTop_toBottomOf="@id/Tier"
             app:layout_constraintLeft_toRightOf="@id/Count"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
             />
         <TextView
             android:id="@+id/City_from"
@@ -137,16 +144,17 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/second_color"
             android:textSize="16sp"
-            android:text="Ресурс"
+            android:text="Город из"
             />
 
-        <EditText
+        <Spinner
             android:layout_width="wrap_content"
+            android:id="@+id/Spinner_City_from"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_City_from"
             app:layout_constraintTop_toBottomOf="@id/Count"
             app:layout_constraintLeft_toRightOf="@id/City_from"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="16dp"
             />
         <TextView
             android:id="@+id/City_to"
@@ -158,16 +166,17 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/second_color"
             android:textSize="16sp"
-            android:text="Ресурс"
+            android:text="Город в"
             />
 
-        <EditText
+        <Spinner
             android:layout_width="wrap_content"
+            android:id="@+id/Spinner_City_to"
             android:layout_height="wrap_content"
-            android:id="@+id/edit_City_to"
             app:layout_constraintTop_toBottomOf="@id/City_from"
             app:layout_constraintLeft_toRightOf="@id/City_to"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="16dp"
             />
 
         <Button
@@ -195,6 +204,184 @@
             android:textStyle="bold"
             android:textSize="20sp"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/money"
+            app:layout_constraintTop_toBottomOf="@id/Earning"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/second_color"
+            />
+
+        <TextView
+            android:id="@+id/Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/money"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Детали"
+            android:textColor="@color/second_color"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <LinearLayout
+            android:id="@+id/priceForOneCityFromLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Details"
+            >
+
+            <TextView
+                android:id="@+id/priceForOneCityFromText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за 1.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForOneCityFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priceForOneCityToLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForOneCityFromLayout"
+            >
+
+            <TextView
+                android:id="@+id/priceForOneCityToText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за 1.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForOneCityTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priceForCountCityFromLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForOneCityToLayout"
+            >
+
+            <TextView
+                android:id="@+id/priceForCountCityFromText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за x.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForCountCityFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priceForCountCityToLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForCountCityFromLayout"
+            >
+
+            <TextView
+                android:id="@+id/priceForCountCityToText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за x.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForCountCityTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/timeInTheRoad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForCountCityToLayout"
+            android:paddingBottom="60dp"
+            >
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Время в пути:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

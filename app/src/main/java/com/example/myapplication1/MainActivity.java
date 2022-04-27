@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.myapplication1.MVVM.views.TransportationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new Earnings();
                         break;
                     case R.id.page_4:
-                        fragment = new Builds();
+                        fragment = new TransportationFragment();
                         break;
                 }
 
