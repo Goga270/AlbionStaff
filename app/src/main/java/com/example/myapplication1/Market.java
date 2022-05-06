@@ -164,10 +164,19 @@ public class Market extends Fragment {
 
         RecyclerView recyclerView = rootView.findViewById(R.id.button_item);
         setInitialData();
+
+
         ButtonAdapter buttonAdapter = new ButtonAdapter(getContext(),states);
         recyclerView.setAdapter(buttonAdapter);
 
         return rootView;
+    }
+
+    public void changeFragment(Fragment first){
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.addToBackStack(null);
+        ft.replace(R.id.fr, first);
+        ft.commit();
     }
 
     public void setInitialData(){

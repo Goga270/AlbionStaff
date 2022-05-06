@@ -16,23 +16,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication1.EarningItem;
 import com.example.myapplication1.MainActivity;
+import com.example.myapplication1.Market;
 import com.example.myapplication1.R;
 import com.example.myapplication1.second_market;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.example.myapplication1.DI.serviceLocator;
 
 public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder> {
 
     private final LayoutInflater inflater;
     private final List<ButtonItem> states;
     private Map<String,String[]> map = new HashMap<>();
-    private Fragment fragment = null;
+    private second_market fragment = null;
 
     public ButtonAdapter(Context context, List<ButtonItem> states) {
         this.inflater = LayoutInflater.from(context);
@@ -73,10 +76,17 @@ public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder
                                     }
                                 }
                                 //FragmentTransaction ft = (MainActivity.getINSTANCE()).getSupportFragmentManager().beginTransaction();
-                                FragmentTransaction ft = fragment.getFragmentManager().beginTransaction();
+
+
+
+                                FragmentManager fragmentManager = MainActivity.getINSTANCE().getSupportFragmentManager();
+                                FragmentTransaction ft = fragmentManager.beginTransaction() ;
                                 ft.addToBackStack(null);
                                 ft.replace(R.id.fr, fragment);
                                 ft.commit();
+                                Market market = new Market();
+                                market.changeFragment(fragment);
+
                                 return true;
                             }
                         });

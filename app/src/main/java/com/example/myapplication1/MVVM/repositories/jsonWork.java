@@ -24,6 +24,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class jsonWork extends ViewModel {
+    //Transportation
     private MutableLiveData<String> priceForOneCityFrom = new MutableLiveData<>("");
     private MutableLiveData<String > priceForCountCityFrom = new MutableLiveData<>("");
     private MutableLiveData<String> priceForOneCityTo = new MutableLiveData<>("");
@@ -35,6 +36,22 @@ public class jsonWork extends ViewModel {
     private MutableLiveData<String> earn = new MutableLiveData<>("");
     private MutableLiveData<Boolean> flag = new MutableLiveData<>();
 
+    //PereCraft
+    private MutableLiveData<String> earn_PereCraft = new MutableLiveData<>("");
+    private MutableLiveData<String> priceFirstResource = new MutableLiveData<>("");
+    private MutableLiveData<String> priceSecondResource = new MutableLiveData<>("");
+
+    public MutableLiveData<String> getEarn_PereCraft() {
+        return earn_PereCraft;
+    }
+
+    public MutableLiveData<String> getPriceFirstResource() {
+        return priceFirstResource;
+    }
+
+    public MutableLiveData<String> getPriceSecondResource() {
+        return priceSecondResource;
+    }
 
     public MutableLiveData<String> getEarn() {
         return earn;
@@ -68,10 +85,16 @@ public class jsonWork extends ViewModel {
 
         String url = "https://www.albion-online-data.com/api/v2/stats/prices/" + resources.getApi_name() + "?locations=" + city_from.getApi_name() + "," + city_to.getApi_name() + "&qualities=1";
 
-        new getURLData().execute(url);
+        new getURLDataForTransportation().execute(url);
     }
 
-    private class getURLData extends AsyncTask<String, String, String> {
+    public void getData(Resources resources, Integer count){
+        String url = "https://www.albion-online-data.com/api/v2/stats/prices/" + "resources.getApi_name() + ?locations=Caerleon,Bridgewatch,Lymhurst,Fort%20Sterling,Thetford,Martlock&qualities=1";
+
+
+    }
+
+    private class getURLDataForTransportation extends AsyncTask<String, String, String> {
 
         protected void onPreExecute() {
             super.onPreExecute();
@@ -163,4 +186,10 @@ public class jsonWork extends ViewModel {
             }
         }
     }
+
+    private class getURLDataForPereCraft extends Thread {
+        public
+    }
+
+
 }

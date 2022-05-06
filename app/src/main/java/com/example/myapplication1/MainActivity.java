@@ -111,4 +111,12 @@ public class MainActivity extends AppCompatActivity {
         return rootView;
     }
 
+
+    public void changeFragment(Fragment first){
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.addToBackStack(null);
+        ft.replace(R.id.fr, first);
+        ft.commit();
+    }
+
 }
