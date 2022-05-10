@@ -3,6 +3,7 @@ package com.example.myapplication1;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.ClipData;
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
                 ft.addToBackStack(null);
                 ft.replace(R.id.fr, fragment);
+                ft.attach(fragment);
                 ft.commit();
 
                 return true;
@@ -113,9 +115,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void changeFragment(Fragment first){
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
         ft.addToBackStack(null);
-        ft.replace(R.id.fr, first);
+        ft.add(R.id.fr,first);
+        /*ft.replace(R.id.fr, fragment);*/
         ft.commit();
     }
 

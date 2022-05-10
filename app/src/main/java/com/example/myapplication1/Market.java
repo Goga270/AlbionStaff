@@ -40,6 +40,8 @@ public class Market extends Fragment {
     private String[] f = { "Ybrbnf ", "Seva" };
     private Fragment fragment=null;
     ArrayList<ButtonItem> states = new ArrayList<ButtonItem>();
+    private static Market instance;
+
 
     public Market() {
         // Required empty public constructor
@@ -63,6 +65,10 @@ public class Market extends Fragment {
         return fragment;
     }
 
+    public static Market getInstance() {
+        return instance;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +76,8 @@ public class Market extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+        instance = this;
 
         /*Spinner spinner = (Spinner) getView().findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item,f);
@@ -83,7 +91,7 @@ public class Market extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_market, container, false);
 
-        Button b = rootView.findViewById(R.id.Button_armor);
+        /*Button b = rootView.findViewById(R.id.Button_armor);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,16 +159,18 @@ public class Market extends Fragment {
                                 fragment.setArguments(bundle);
                         }
 
-                        FragmentTransaction ft = getFragmentManager().beginTransaction();
+                        *//*FragmentTransaction ft = getFragmentManager().beginTransaction();
                         ft.addToBackStack(null);
                         ft.replace(R.id.fr, fragment);
-                        ft.commit();
+                        ft.commit();*//*
+
+                        changeFragment(fragment);
                         return true;
                     }
                 });
                 popupMenu.show();
             }
-        });
+        });*/
 
         RecyclerView recyclerView = rootView.findViewById(R.id.button_item);
         setInitialData();
@@ -181,6 +191,8 @@ public class Market extends Fragment {
 
     public void setInitialData(){
         states.add(new ButtonItem("Броня", getContext()));
+        states.add(new ButtonItem("Аксесуары", getContext()));
+        states.add(new ButtonItem("Артефакты", getContext()));
     }
 }
 

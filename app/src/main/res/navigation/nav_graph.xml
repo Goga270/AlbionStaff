@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/third_market"
-        android:name="com.example.myapplication1.third_market"
+        android:name="com.example.myapplication1.MVVM.views.third_market"
         android:label="third_market" />
     <fragment
         android:id="@+id/transportationFragment"

@@ -1,10 +1,18 @@
 package com.example.myapplication1;
 
+import android.content.ContentResolver;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+import com.example.myapplication1.DI.serviceLocator;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +20,13 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +44,7 @@ public class second_market extends Fragment {
     private String mParam1;
     private String mParam2;
     ArrayList<MarketItem> states = new ArrayList<MarketItem>();
+    private static second_market instance;
 
     public second_market() {
         // Required empty public constructor
@@ -53,6 +68,10 @@ public class second_market extends Fragment {
         return fragment;
     }
 
+    public static second_market getInstance() {
+        return instance;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +81,7 @@ public class second_market extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+        instance = this;
     }
 
     @Override
@@ -70,15 +90,27 @@ public class second_market extends Fragment {
         // Inflate the layout for this fragment
        View rootView = inflater.inflate(R.layout.fragment_second_market, container, false);
        RecyclerView recyclerView = rootView.findViewById(R.id.list);
-       setInitialData();
+       setInitialData(rootView);
        StateAdapter stateAdapter = new StateAdapter(getContext(),states);
        recyclerView.setAdapter(stateAdapter);
        return rootView;
     }
 
-    private void setInitialData(){
+    private void setInitialData(View view) {
+        String[] apiNames = serviceLocator.getServiceLocator().getRepository().getOneApiNames(mParam1);
+        System.out.println(apiNames.length);
+        for (int i = 0; i < apiNames.length; i++) {
+            int ID = view.getResources().getIdentifier(apiNames[i].toLowerCase(Locale.ROOT), "drawable", getContext().getPackageName());
+            String tier = apiNames[i].split("")[1];
+            states.add(new MarketItem(ID, apiNames[i], "Тир: " + tier, "Чар: 0"));
 
-        states.add(new MarketItem ( R.drawable.cloth_armor_tier2_char0, "Тканевая броня", "Тир: 2", "Чар: 0"));
-        states.add(new MarketItem (R.drawable.cloth_armor_tier3_char0, "Тканевая броня", "Тир: 3", "Чар: 0"));
+        }
+    }
+
+    public void changeFragment(Fragment fragment){
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.addToBackStack(null);
+        ft.replace(R.id.fr, fragment);
+        ft.commit();
     }
 }

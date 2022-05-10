@@ -1,20 +1,25 @@
 package com.example.myapplication1;
 
 import android.content.Context;
-        import android.view.LayoutInflater;
+import android.os.Bundle;
+import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
         import android.widget.ImageView;
         import android.widget.TextView;
 
-        import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
-        import java.util.List;
+import com.example.myapplication1.MVVM.views.third_market;
+
+import java.util.List;
 
 public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
 
     private final LayoutInflater inflater;
     private final List<MarketItem> states;
+    private Fragment fragment;
 
     StateAdapter(Context context, List<MarketItem> states) {
         this.states = states;
@@ -31,9 +36,21 @@ public class StateAdapter extends RecyclerView.Adapter<StateAdapter.ViewHolder>{
     public void onBindViewHolder(StateAdapter.ViewHolder holder, int position) {
         MarketItem state = states.get(position);
         holder.imgView.setImageResource(state.getImg());
+        //holder.imgView.setImageURI(state.getImage());
+        //holder.imgView.setImageBitmap(state.getBitmap());
         holder.nameView.setText(state.getName());
         holder.tierView.setText(state.getTier());
         holder.charsView.setText(state.getChars());
+        holder.imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment= new third_market();
+                Bundle bundle = new Bundle();
+                bundle.putString("ITEM", state.getName());
+                fragment.setArguments(bundle);
+                second_market.getInstance().changeFragment(fragment);
+            }
+        });
     }
 
     @Override

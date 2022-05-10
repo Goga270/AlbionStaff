@@ -1,5 +1,8 @@
 package com.example.myapplication1;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MarketItem  {
@@ -8,17 +11,31 @@ public class MarketItem  {
     private String name;
     private String tier;
     private String chars;
+    private Uri image;
+    private Bitmap bitmap;
 
-    public MarketItem(int img, String name, String tier, String chars) {
-        this.img = img;
+    public Uri getImage() {
+        return image;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public MarketItem(int id, String name, String tier, String chars) {
+        this.img = id;
         this.name = name;
         this.tier = tier;
         this.chars = chars;
+        //this.image = image;
+        this.bitmap = bitmap;
     }
 
     public int getImg() {
         return img;
     }
+
+
 
     public String getName() {
         return name;

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/color_background">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MVVM.views.PereCraftFragment"
+        >
+
+        <TextView
+            android:id="@+id/Opisanie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Описание"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/second_color"
+            />
+
+        <TextView
+            android:id="@+id/Opisanie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Opisanie_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            android:text="gjkgjfkjgkjgkgjkfjgkgjkfjgkjgfjgfjgfkjgkfjg"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Opisanie"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Калькулятор"
+            android:textColor="@color/second_color"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <!--<Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Best_var"
+            app:layout_constraintTop_toBottomOf="@id/Opisanie"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"
+            android:text="Лучший вариант"
+            android:textColor="@color/color_background"
+            android:layout_marginTop="16dp"
+            />-->
+
+        <TextView
+            android:id="@+id/Resource_PereCraft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            android:text="Ресурс"
+            />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:id="@+id/Spinner_Resources_PereCraft"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintLeft_toRightOf="@id/Resource_PereCraft"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="16dp"
+            />
+
+        <TextView
+            android:id="@+id/Tier_PereCraft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Resource_PereCraft"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+
+            android:text="Тир"
+            />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:id="@+id/Spinner_Tier_PereCraft"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Resource_PereCraft"
+            app:layout_constraintLeft_toRightOf="@id/Tier_PereCraft"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="16dp"
+            />
+
+        <TextView
+            android:id="@+id/Count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Tier_PereCraft"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            android:text="Количество"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_Count_PereCraft"
+            app:layout_constraintTop_toBottomOf="@id/Tier_PereCraft"
+            app:layout_constraintLeft_toRightOf="@id/Count"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+            />
+        <!--<TextView
+            android:id="@+id/City_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Count"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            android:text="Город из"
+            />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:id="@+id/Spinner_City_from"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Count"
+            app:layout_constraintLeft_toRightOf="@id/City_from"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="16dp"
+            />
+        <TextView
+            android:id="@+id/City_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/City_from"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/second_color"
+            android:textSize="16sp"
+            android:text="Город в"
+            />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:id="@+id/Spinner_City_to"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/City_from"
+            app:layout_constraintLeft_toRightOf="@id/City_to"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="16dp"
+            />-->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Calculation_PereCraft"
+            app:layout_constraintTop_toBottomOf="@id/Tier_PereCraft"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="16dp"
+            android:text="Расчёт"
+            android:textColor="@color/color_background"
+            android:layout_marginTop="16dp"
+            />
+
+        <TextView
+            android:id="@+id/Earning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Calculation_PereCraft"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Прибыль"
+            android:textColor="@color/second_color"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/money_PereCraft"
+            app:layout_constraintTop_toBottomOf="@id/Earning"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/second_color"
+            />
+
+        <TextView
+            android:id="@+id/Details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/money_PereCraft"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Детали"
+            android:textColor="@color/second_color"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <LinearLayout
+            android:id="@+id/priceForOneCityFromLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/Details"
+            >
+
+            <TextView
+                android:id="@+id/priceForOneCityFromText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за 1.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForOneCityFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priceForOneCityToLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForOneCityFromLayout"
+            >
+
+            <TextView
+                android:id="@+id/priceForOneCityToText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за 1.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForOneCityTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priceForCountCityFromLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForOneCityToLayout"
+            >
+
+            <TextView
+                android:id="@+id/priceForCountCityFromText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за x.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForCountCityFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/priceForCountCityToLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForCountCityFromLayout"
+            >
+
+            <TextView
+                android:id="@+id/priceForCountCityToText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Цена за x.шт в городе:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/priceForCountCityTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/timeInTheRoad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/priceForCountCityToLayout"
+            android:paddingBottom="60dp"
+            >
+
+            <TextView
+                android:id="@+id/timeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Время в пути:"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/second_color"
+                android:textSize="16sp"
+                />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

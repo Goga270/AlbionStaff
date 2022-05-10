@@ -20,6 +20,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication1.EarningItem;
+import com.example.myapplication1.Earnings;
 import com.example.myapplication1.MainActivity;
 import com.example.myapplication1.Market;
 import com.example.myapplication1.R;
@@ -34,8 +35,8 @@ public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder
 
     private final LayoutInflater inflater;
     private final List<ButtonItem> states;
-    private Map<String,String[]> map = new HashMap<>();
-    private second_market fragment = null;
+    private Fragment fragment = null;
+    private Fragment fragment2 = null;
 
     public ButtonAdapter(Context context, List<ButtonItem> states) {
         this.inflater = LayoutInflater.from(context);
@@ -51,9 +52,9 @@ public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ButtonAdapter.ViewHolder holder, int position) {
         ButtonItem elem = states.get(position);
+        System.out.println(elem.getName());
         holder.button.setText(elem.getName());
-        map = elem.getPopUpMenuCatalog();
-        String[] strings = map.get(elem.getName());
+        String[] strings = elem.getPopUpMenuCatalog();
         holder.button.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -69,23 +70,28 @@ public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder
                                 String title = (String) menuItem.getTitle();
                                 Bundle bundle = new Bundle();
                                 fragment = new second_market();
-                                for (int i=0;i<strings.length;i++){
+
+                                bundle.putString("ID", title);
+                                System.out.println(title);
+                                fragment.setArguments(bundle);
+                                Market.getInstance().changeFragment(fragment);
+                                /*for (int i=0;i<strings.length;i++){
                                     if(title == strings[i]){
                                         bundle.putString("ID", title);
                                         break;
                                     }
-                                }
+                                }*/
                                 //FragmentTransaction ft = (MainActivity.getINSTANCE()).getSupportFragmentManager().beginTransaction();
 
 
 
-                                FragmentManager fragmentManager = MainActivity.getINSTANCE().getSupportFragmentManager();
+                                /*FragmentManager fragmentManager = MainActivity.getINSTANCE().getSupportFragmentManager();
                                 FragmentTransaction ft = fragmentManager.beginTransaction() ;
                                 ft.addToBackStack(null);
                                 ft.replace(R.id.fr, fragment);
-                                ft.commit();
-                                Market market = new Market();
-                                market.changeFragment(fragment);
+                                ft.commit();*/
+
+                                /*new MarketButton().changeFrag(fragment);*/
 
                                 return true;
                             }
@@ -109,4 +115,5 @@ public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder
             button = view.findViewById(R.id.Button);
         }
     }
+
 }

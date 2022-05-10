@@ -26,7 +26,7 @@
             android:textStyle="bold" />
 
 
-        <Button
+        <!--<Button
             android:id="@+id/Button_armor"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
@@ -196,14 +196,13 @@
             android:layout_below="@+id/Button_Resources"
             android:layout_marginLeft="30dp"
             android:text="Трофеи"
-            android:textColor="@color/color_background" />
+            android:textColor="@color/color_background" />-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/button_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/Button_Trophies"
-            android:layout_marginBottom="100dp"
+            android:layout_below="@id/title"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </RelativeLayout>

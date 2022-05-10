@@ -5,12 +5,14 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import com.example.myapplication1.DI.serviceLocator;
 
 
 public class ButtonItem {
-    private final Map<String,String[]> popUpMenuCatalog = new HashMap<>();
+    private String[] popUpMenuCatalog;
     private String name;
     private Context context;
 
@@ -21,8 +23,7 @@ public class ButtonItem {
     }
 
     private void setPopUpMenuCatalog(){
-        popUpMenuCatalog.put("Броня", new String[] {"Тканевая броня", "Тканевый шлем", "Тканевые ботинки", "Кожанная броня", "Кожанный шлем", "Кожанные ботинки", "Тяжёлая броня"});
-        popUpMenuCatalog.put("Аксесуары", new String[] {"fjfkjfk", " kjgjgjgkj"});
+        popUpMenuCatalog = serviceLocator.getServiceLocator().getRepository().getMenu(name);
     }
 
     public String getName() {
@@ -41,7 +42,7 @@ public class ButtonItem {
         this.context = context;
     }
 
-    public Map<String, String[]> getPopUpMenuCatalog() {
+    public String[] getPopUpMenuCatalog() {
         return popUpMenuCatalog;
     }
 }
