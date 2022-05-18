@@ -41,6 +41,7 @@ public class Market extends Fragment {
     private Fragment fragment=null;
     ArrayList<ButtonItem> states = new ArrayList<ButtonItem>();
     private static Market instance;
+    private boolean flag = true;
 
 
     public Market() {
@@ -91,89 +92,11 @@ public class Market extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_market, container, false);
 
-        /*Button b = rootView.findViewById(R.id.Button_armor);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                PopupMenu popupMenu = new PopupMenu(getActivity(),b);
-                popupMenu.getMenuInflater().inflate(R.menu.market_menu_armor, popupMenu.getMenu());
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem menuItem) {
-
-                        Bundle bundle = new Bundle();
-                        int id=menuItem.getItemId();
-                        switch (id){
-                            case R.id.cloth_armor:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "cloth_armor");
-                                fragment.setArguments(bundle);
-
-                            case R.id.cloth_helmet:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "cloth_helmet");
-                                fragment.setArguments(bundle);
-
-                            case R.id.cloth_shoes:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "cloth_shoes");
-                                fragment.setArguments(bundle);
-
-                            case R.id.leather_armor:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "leather_armor");
-                                fragment.setArguments(bundle);
-
-                            case R.id.leather_helmet:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "leather_helmet");
-                                fragment.setArguments(bundle);
-
-                            case R.id.leather_shoes:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "leather_shoes");
-                                fragment.setArguments(bundle);
-
-                            case R.id.plate_armor:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "plate_armor");
-                                fragment.setArguments(bundle);
-
-                            case R.id.plate_helmet:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "plate_helmet");
-                                fragment.setArguments(bundle);
-
-                            case R.id.plate_shoes:
-                                fragment = new second_market();
-                                bundle = new Bundle();
-                                bundle.putString("ID", "plate_shoes");
-                                fragment.setArguments(bundle);
-                        }
-
-                        *//*FragmentTransaction ft = getFragmentManager().beginTransaction();
-                        ft.addToBackStack(null);
-                        ft.replace(R.id.fr, fragment);
-                        ft.commit();*//*
-
-                        changeFragment(fragment);
-                        return true;
-                    }
-                });
-                popupMenu.show();
-            }
-        });*/
-
         RecyclerView recyclerView = rootView.findViewById(R.id.button_item);
-        setInitialData();
+        if(flag) {
+            flag = false;
+            setInitialData();
+        }
 
 
         ButtonAdapter buttonAdapter = new ButtonAdapter(getContext(),states);

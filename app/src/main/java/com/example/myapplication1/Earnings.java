@@ -3,11 +3,15 @@ package com.example.myapplication1;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.myapplication1.MVVM.views.PereCraftFragment;
+import com.example.myapplication1.MVVM.views.TransportationFragment;
 
 import java.util.ArrayList;
 
@@ -27,9 +31,16 @@ public class Earnings extends Fragment {
     private String mParam1;
     private String mParam2;
     ArrayList<EarningItem> states = new ArrayList<EarningItem>();
+    private boolean flag = true;
+    private Fragment fragment;
+    private static Earnings instance;
 
     public Earnings() {
         // Required empty public constructor
+    }
+
+    public static Earnings getInstance(){
+        return instance;
     }
 
     /**
@@ -57,6 +68,7 @@ public class Earnings extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        instance = this;
     }
 
     @Override
@@ -65,16 +77,26 @@ public class Earnings extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_earnings, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.earn_item);
-        setInitialData();
+        if(flag) {
+            flag = false;
+            setInitialData();
+        }
         EarningAdapter earningAdapter = new EarningAdapter(getContext(),states);
         recyclerView.setAdapter(earningAdapter);
         return view;
     }
 
     public void setInitialData(){
-        states.add(new EarningItem(R.drawable.albion,"Прибыль: 10-20%","Вложения: Мал-Бол","Перевозка"));
-        states.add(new EarningItem(R.drawable.albion,"Прибыль: 25-50%","Вложения: Бол","Перекрафт"));
-        states.add(new EarningItem(R.drawable.albion,"Прибыль: -25-50%","Вложения: Мал-Бол","Разбор артефактов"));
-        states.add(new EarningItem(R.drawable.albion,"Прибыль: -10-40%","Вложения: Мал-Бол","Казино"));
+        states.add(new EarningItem(R.drawable.albion,"Прибыль: 10-20%","Вложения: Мал-Бол","Перевозка", fragment=new TransportationFragment()));
+        states.add(new EarningItem(R.drawable.albion,"Прибыль: 25-50%","Вложения: Бол","Перекрафт", fragment = new PereCraftFragment()));
+        //states.add(new EarningItem(R.drawable.albion,"Прибыль: -25-50%","Вложения: Мал-Бол","Разбор артефактов"));
+        //states.add(new EarningItem(R.drawable.albion,"Прибыль: -10-40%","Вложения: Мал-Бол","Казино"));
+    }
+
+    public void changeFragment(Fragment first){
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.addToBackStack(null);
+        ft.replace(R.id.fr, first);
+        ft.commit();
     }
 }

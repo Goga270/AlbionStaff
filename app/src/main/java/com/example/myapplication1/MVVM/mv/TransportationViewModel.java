@@ -14,7 +14,6 @@ import com.example.myapplication1.MVVM.models.Cities;
 import com.example.myapplication1.MVVM.models.Resources;
 import com.example.myapplication1.MVVM.repositories.jsonWork;
 import com.example.myapplication1.R;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONArray;
 import org.json.JSONException;

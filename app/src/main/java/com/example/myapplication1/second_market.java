@@ -39,12 +39,12 @@ public class second_market extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     ArrayList<MarketItem> states = new ArrayList<MarketItem>();
     private static second_market instance;
+    private boolean flag = true;
 
     public second_market() {
         // Required empty public constructor
@@ -90,7 +90,10 @@ public class second_market extends Fragment {
         // Inflate the layout for this fragment
        View rootView = inflater.inflate(R.layout.fragment_second_market, container, false);
        RecyclerView recyclerView = rootView.findViewById(R.id.list);
-       setInitialData(rootView);
+       if(flag) {
+           flag=false;
+           setInitialData(rootView);
+       }
        StateAdapter stateAdapter = new StateAdapter(getContext(),states);
        recyclerView.setAdapter(stateAdapter);
        return rootView;

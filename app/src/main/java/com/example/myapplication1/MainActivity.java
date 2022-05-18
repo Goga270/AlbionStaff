@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
+import com.example.myapplication1.DI.serviceLocator;
 import android.content.ClipData;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +19,8 @@ import android.widget.TextView;
 import com.example.myapplication1.MVVM.views.TransportationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+
+import java.io.FileNotFoundException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
         ft.replace(R.id.fr, fragment);
         ft.addToBackStack(null);
         ft.commit();
+        try {
+            serviceLocator.getServiceLocator().getRepository().setItemsJsonFile();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {

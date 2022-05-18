@@ -36,6 +36,12 @@ public class EarningAdapter extends RecyclerView.Adapter<EarningAdapter.ViewHold
         holder.text_vlojenia.setText(earningItem.getText_Vlojenia());
         holder.text_earn.setText(earningItem.getText_earn());
         holder.text_button.setText(earningItem.getText_button());
+        holder.text_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Earnings.getInstance().changeFragment(earningItem.getFragment());
+            }
+        });
     }
 
 

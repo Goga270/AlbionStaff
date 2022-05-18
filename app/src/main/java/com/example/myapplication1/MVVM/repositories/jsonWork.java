@@ -1,29 +1,39 @@
 package com.example.myapplication1.MVVM.repositories;
 
+import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Environment;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
-
+import com.example.myapplication1.MVVM.models.jsonModel;
 import com.example.myapplication1.MVVM.models.Cities;
 import com.example.myapplication1.MVVM.models.Resources;
 import com.example.myapplication1.MVVM.mv.TransportationViewModel;
-import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class jsonWork extends ViewModel {
@@ -56,6 +66,9 @@ public class jsonWork extends ViewModel {
     private MutableLiveData<String> costFortSterling = new MutableLiveData<>("");
     private MutableLiveData<String> costThetford = new MutableLiveData<>("");
     private MutableLiveData<String> costMartlock = new MutableLiveData<>("");
+
+    //items.json
+    List<jsonModel> itemsJson;
 
     public MutableLiveData<String> getCostBridgewatch() {
         return costBridgewatch;
@@ -118,6 +131,16 @@ public class jsonWork extends ViewModel {
         initialApiNamesForMarketItem();
     }
 
+    public void setItemsJsonFile() throws FileNotFoundException {
+        Gson gson = new Gson();
+        Type typeList = new TypeToken<List<jsonModel>>(){}.getType();
+        File sdPath = Environment.getExternalStorageDirectory();
+        File f = new File(sdPath+"/Download/items.json");
+        System.out.println(f.canRead());
+        itemsJson = gson.fromJson(new FileReader(f), typeList);
+        System.out.println(itemsJson);
+    }
+
     private void initialApiNamesForMarketItem(){
         apiNames.put("Тканевая броня", new String[]{"T2_ARMOR_CLOTH_SET1", "T3_ARMOR_CLOTH_SET1", "T4_ARMOR_CLOTH_SET1",
         "T5_ARMOR_CLOTH_SET1", "T6_ARMOR_CLOTH_SET1", "T7_ARMOR_CLOTH_SET1", "T8_ARMOR_CLOTH_SET1", "T4_ARMOR_CLOTH_SET2",
@@ -125,11 +148,29 @@ public class jsonWork extends ViewModel {
                 "T5_ARMOR_CLOTH_SET3", "T6_ARMOR_CLOTH_SET3", "T7_ARMOR_CLOTH_SET3", "T8_ARMOR_CLOTH_SET3","T4_ARMOR_CLOTH_KEEPER",
                 "T5_ARMOR_CLOTH_KEEPER", "T6_ARMOR_CLOTH_KEEPER", "T7_ARMOR_CLOTH_KEEPER", "T8_ARMOR_CLOTH_KEEPER","T4_ARMOR_CLOTH_MORGANA",
                 "T5_ARMOR_CLOTH_MORGANA", "T6_ARMOR_CLOTH_MORGANA", "T7_ARMOR_CLOTH_MORGANA", "T8_ARMOR_CLOTH_MORGANA",});
+        apiNames.put("Тканевый шлем", new String[]{"T2_HEAD_CLOTH_SET1", "T3_HEAD_CLOTH_SET1", "T4_HEAD_CLOTH_SET1", "T5_HEAD_CLOTH_SET1",
+                "T6_HEAD_CLOTH_SET1", "T7_HEAD_CLOTH_SET1", "T8_HEAD_CLOTH_SET1"});
+        apiNames.put("Тканевые ботинки", new String[]{"T2_SHOES_CLOTH_SET1", "T3_SHOES_CLOTH_SET1", "T4_SHOES_CLOTH_SET1", "T5_SHOES_CLOTH_SET1",
+                "T6_SHOES_CLOTH_SET1", "T7_SHOES_CLOTH_SET1", "T8_SHOES_CLOTH_SET1"});
+        apiNames.put("Кожанная броня", new String[]{"T2_ARMOR_LEATHER_SET1", "T3_ARMOR_LEATHER_SET1", "T4_ARMOR_LEATHER_SET1", "T5_ARMOR_LEATHER_SET1",
+                "T6_ARMOR_LEATHER_SET1", "T7_ARMOR_LEATHER_SET1", "T8_ARMOR_LEATHER_SET1"});
+        apiNames.put("Кожанный шлем", new String[]{"T2_HEAD_LEATHER_SET1", "T3_HEAD_LEATHER_SET1", "T4_HEAD_LEATHER_SET1", "T5_HEAD_LEATHER_SET1",
+                "T6_HEAD_LEATHER_SET1", "T7_HEAD_LEATHER_SET1", "T8_HEAD_LEATHER_SET1"});
+        apiNames.put("Кожанные ботинки", new String[]{"T2_SHOES_LEATHER_SET1", "T3_SHOES_LEATHER_SET1", "T4_SHOES_LEATHER_SET1", "T5_SHOES_LEATHER_SET1",
+                "T6_SHOES_LEATHER_SET1", "T7_SHOES_LEATHER_SET1", "T8_SHOES_LEATHER_SET1"});
+        apiNames.put("Тяжёлая броня", new String[]{"T2_ARMOR_PLATE_SET1", "T3_ARMOR_PLATE_SET1", "T4_ARMOR_PLATE_SET1", "T5_ARMOR_PLATE_SET1",
+                "T6_ARMOR_PLATE_SET1", "T7_ARMOR_PLATE_SET1", "T8_ARMOR_PLATE_SET1"});
+        apiNames.put("Тяжёлый шлем", new String[]{"T2_HEAD_PLATE_SET1", "T3_HEAD_PLATE_SET1", "T4_HEAD_PLATE_SET1", "T5_HEAD_PLATE_SET1",
+                "T6_HEAD_PLATE_SET1", "T7_HEAD_PLATE_SET1", "T8_HEAD_PLATE_SET1"});
+        apiNames.put("Тяжёлые ботинки", new String[]{"T2_SHOES_PLATE_SET1", "T3_SHOES_PLATE_SET1", "T4_SHOES_PLATE_SET1", "T5_SHOES_PLATE_SET1",
+                "T6_SHOES_PLATE_SET1", "T7_SHOES_PLATE_SET1", "T8_SHOES_PLATE_SET1"});
+        apiNames.put("Сумка", new String[]{"T2_BAG", "T3_BAG", "T4_BAG", "T5_BAG", "T6_BAG", "T7_BAG", "T8_BAG"});
+
 
     }
 
     private void initialDataForMarketButtons(){
-        popupMenu.put("Броня", new String[] {"Тканевая броня", "Тканевый шлем", "Тканевые ботинки", "Кожанная броня", "Кожанный шлем", "Кожанные ботинки", "Тяжёлая броня"});
+        popupMenu.put("Броня", new String[] {"Тканевая броня", "Тканевый шлем", "Тканевые ботинки", "Кожанная броня", "Кожанный шлем", "Кожанные ботинки", "Тяжёлая броня", "Тяжёлый шлем", "Тяжёлые ботинки"});
         popupMenu.put("Аксесуары", new String[] {"Сумка", "Плащ"});
         popupMenu.put("Артефакты", new String[]{"Броня", "Магия", "Оружие", "Левая рука", "Другое", "Дальнее оружие"});
     }
@@ -361,8 +402,10 @@ public class jsonWork extends ViewModel {
         }
     }
 
-    public void parseJson(){
-
+    public void parseJson() throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        jsonModel jsonModels = mapper.readValue(new URL("https://github.com/broderickhyman/ao-bin-dumps/blob/master/formatted/items.json"), jsonModel.class);
+        System.out.println(jsonModels);
     }
 
 

@@ -1,16 +1,24 @@
 package com.example.myapplication1;
 
+import androidx.fragment.app.Fragment;
+
 public class EarningItem {
     private int img;
     private String text_earn;
     private String text_Vlojenia;
     private String text_button;
+    private Fragment fragment;
 
-    public EarningItem(int img, String text_name, String text_Vlojenia, String tex_button) {
+    public Fragment getFragment() {
+        return fragment;
+    }
+
+    public EarningItem(int img, String text_name, String text_Vlojenia, String tex_button, Fragment fragment) {
         this.img = img;
         this.text_earn = text_name;
         this.text_Vlojenia = text_Vlojenia;
         this.text_button = tex_button;
+        this.fragment = fragment;
     }
 
     public int getImg() {
