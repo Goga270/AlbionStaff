@@ -28,6 +28,7 @@
     <string name="plate_armor">Тяжёлая броня</string>
     <string name="plate_helmet">Тяжёлый шлем</string>
     <string name="plate_shoes">Тяжёлые ботинки</string>
+    <string name="opisanie_transportation">Самая обычная перевозка ресурсов из одного города в другой, с целью получения прибыли. Здесь вы сможете посмотреть разницу в цене на ресурсы в разных городах.</string>
     <string-array name="Resources">
         <item>Ткань</item>
         <item>Хлопок</item>

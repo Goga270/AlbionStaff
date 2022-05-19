@@ -12,6 +12,8 @@ public class third_marketViewModel extends ViewModel {
     private MutableLiveData<String> costFortSterling = new MutableLiveData<>("");
     private MutableLiveData<String> costThetford = new MutableLiveData<>("");
     private MutableLiveData<String> costMartlock = new MutableLiveData<>("");
+    private MutableLiveData<String> name = new MutableLiveData<>("");
+    private MutableLiveData<String> description = new MutableLiveData<>("");
     private jsonWork repository;
 
     public third_marketViewModel(){
@@ -48,7 +50,17 @@ public class third_marketViewModel extends ViewModel {
         return costMartlock;
     }
 
+    public MutableLiveData<String> getName() {
+        return name;
+    }
+
+    public MutableLiveData<String> getDescription() {
+        return description;
+    }
+
     public void calculateCost(String apiName){
+        name.setValue(repository.getName(apiName));
+        description.setValue(repository.getDescription(apiName));
         repository.getData(apiName);
     }
 

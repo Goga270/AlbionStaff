@@ -7,29 +7,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.PopupMenu;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.myapplication1.EarningItem;
-import com.example.myapplication1.Earnings;
-import com.example.myapplication1.MainActivity;
-import com.example.myapplication1.Market;
+import com.example.myapplication1.MVVM.views.Market;
 import com.example.myapplication1.R;
-import com.example.myapplication1.second_market;
+import com.example.myapplication1.MVVM.views.second_market;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import com.example.myapplication1.DI.serviceLocator;
 
 public class ButtonAdapter extends RecyclerView.Adapter<ButtonAdapter.ViewHolder> {
 

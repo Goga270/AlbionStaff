@@ -3,7 +3,7 @@ package com.example.myapplication1.DI;
 import android.content.Context;
 
 import com.example.myapplication1.MVVM.repositories.jsonWork;
-import com.example.myapplication1.second_market;
+import com.example.myapplication1.MVVM.views.second_market;
 
 public class serviceLocator {
     public static serviceLocator serviceLocator = new serviceLocator();

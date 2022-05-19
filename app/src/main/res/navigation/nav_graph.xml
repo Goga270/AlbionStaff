@@ -6,12 +6,12 @@
     app:startDestination="@id/home2">
     <fragment
         android:id="@+id/home2"
-        android:name="com.example.myapplication1.Home"
+        android:name="com.example.myapplication1.MVVM.views.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/market"
-        android:name="com.example.myapplication1.Market"
+        android:name="com.example.myapplication1.MVVM.views.Market"
         android:label="fragment_market"
         tools:layout="@layout/fragment_market" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/earnings"
-        android:name="com.example.myapplication1.Earnings"
+        android:name="com.example.myapplication1.MVVM.views.Earnings"
         android:label="fragment_earnings"
         tools:layout="@layout/fragment_earnings" >
         <action
@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/second_market"
-        android:name="com.example.myapplication1.second_market"
+        android:name="com.example.myapplication1.MVVM.views.second_market"
         android:label="second_market" >
         <action
             android:id="@+id/action_second_market_to_third_market"

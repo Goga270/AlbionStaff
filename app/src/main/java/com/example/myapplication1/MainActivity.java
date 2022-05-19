@@ -6,21 +6,24 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import com.example.myapplication1.DI.serviceLocator;
-import android.content.ClipData;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.myapplication1.MVVM.views.Builds;
+import com.example.myapplication1.MVVM.views.Earnings;
+import com.example.myapplication1.MVVM.views.Home;
+import com.example.myapplication1.MVVM.views.Market;
 import com.example.myapplication1.MVVM.views.TransportationFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,11 +51,13 @@ public class MainActivity extends AppCompatActivity {
         ft.addToBackStack(null);
         ft.commit();
         try {
-            serviceLocator.getServiceLocator().getRepository().setItemsJsonFile();
+            serviceLocator.getServiceLocator().getRepository().setItemsJsonFile(getApplicationContext(), getResources());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
+        serviceLocator.getServiceLocator().getRepository().getName("T3_ARMOR_CLOTH_SET1");
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

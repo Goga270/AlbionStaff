@@ -1,9 +1,13 @@
 package com.example.myapplication1.MVVM.repositories;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 
+import androidx.core.content.PermissionChecker;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
@@ -12,6 +16,7 @@ import com.example.myapplication1.MVVM.models.jsonModel;
 import com.example.myapplication1.MVVM.models.Cities;
 import com.example.myapplication1.MVVM.models.Resources;
 import com.example.myapplication1.MVVM.mv.TransportationViewModel;
+import com.example.myapplication1.R;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -28,6 +33,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -69,6 +77,7 @@ public class jsonWork extends ViewModel {
 
     //items.json
     List<jsonModel> itemsJson;
+    private jsonModel jsonModel;
 
     public MutableLiveData<String> getCostBridgewatch() {
         return costBridgewatch;
@@ -131,14 +140,40 @@ public class jsonWork extends ViewModel {
         initialApiNamesForMarketItem();
     }
 
-    public void setItemsJsonFile() throws FileNotFoundException {
+    public void setItemsJsonFile(Context context, android.content.res.Resources res) throws IOException {
         Gson gson = new Gson();
-        Type typeList = new TypeToken<List<jsonModel>>(){}.getType();
-        File sdPath = Environment.getExternalStorageDirectory();
-        File f = new File(sdPath+"/Download/items.json");
-        System.out.println(f.canRead());
-        itemsJson = gson.fromJson(new FileReader(f), typeList);
-        System.out.println(itemsJson);
+        //Type typeList = new TypeToken<List<jsonModel>>(){}.getType();
+        InputStream resourcereader = res.openRawResource(R.raw.items);
+        Writer writer = new StringWriter();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(resourcereader, "UTF-8"));
+        String line = reader.readLine();
+        while (line!=null){
+            writer.write(line);
+            line = reader.readLine();
+        }
+        String jsonString = writer.toString();
+        Type listType = new TypeToken<List<jsonModel>>(){}.getType();
+        itemsJson = gson.fromJson(jsonString, listType );
+    }
+
+    public String getName(String uniqName){
+        com.example.myapplication1.MVVM.models.jsonModel element = itemsJson.get(0);
+        for(int i=0;i<itemsJson.size();i++){
+            if(itemsJson.get(i).getUniqueName().equals(uniqName)){
+                element = itemsJson.get(i);
+            }
+        }
+        return element.getLocalizedNames().get("RU-RU");
+    }
+
+    public String getDescription(String uniqName){
+        com.example.myapplication1.MVVM.models.jsonModel element = itemsJson.get(0);
+        for(int i=0;i<itemsJson.size();i++){
+            if(itemsJson.get(i).getUniqueName().equals(uniqName)){
+                element = itemsJson.get(i);
+            }
+        }
+        return element.getLocalizedDescriptions().get("RU-RU");
     }
 
     private void initialApiNamesForMarketItem(){

@@ -79,10 +79,9 @@ public class third_market extends Fragment {
         TextView martlockCost = view.findViewById(R.id.martlock_cost);
         TextView thetfordCost = view.findViewById(R.id.thetford_cost);
         ImageView img = view.findViewById(R.id.img);
+        TextView descr = view.findViewById(R.id.description);
 
         int ID = view.getResources().getIdentifier(mParam1.toLowerCase(Locale.ROOT), "drawable", getContext().getPackageName());
-
-        title.setText(mParam1);
         img.setImageResource(ID);
 
         viewModel.getCostBridgewatch().observe(getViewLifecycleOwner(), cost->{
@@ -107,6 +106,14 @@ public class third_market extends Fragment {
 
         viewModel.getCostThetford().observe(getViewLifecycleOwner(), cost->{
             thetfordCost.setText(cost);
+        });
+
+        viewModel.getName().observe(getViewLifecycleOwner(), name->{
+            title.setText(name);
+        });
+
+        viewModel.getDescription().observe(getViewLifecycleOwner(), description->{
+            descr.setText(description);
         });
 
         viewModel.calculateCost(mParam1);

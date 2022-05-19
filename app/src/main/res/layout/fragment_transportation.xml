@@ -36,7 +36,7 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/second_color"
             android:textSize="16sp"
-            android:text="gjkgjfkjgkjgkgjkfjgkgjkfjgkjgfjgfjgfkjgkfjg"
+            android:text="@string/opisanie_transportation"
             />
 
         <TextView
